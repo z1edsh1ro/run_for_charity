@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.ManagerAgency" optimistic-lock="none" table="manager_agency">
+        <id name="idManagerAcency" type="java.lang.Integer">
+            <column name="id_manager_acency"/>
+            <generator class="identity"/>
+        </id>
+        <property name="idAgency" type="int">
+            <column name="id_agency" not-null="true"/>
+        </property>
+        <property name="idUser" type="string">
+            <column length="20" name="id_user" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

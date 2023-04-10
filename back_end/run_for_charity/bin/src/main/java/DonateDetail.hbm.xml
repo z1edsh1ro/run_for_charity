@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.DonateDetail" optimistic-lock="none" table="donate_detail">
+        <id name="idDonateDetail" type="java.lang.Integer">
+            <column name="id_donate_detail"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.Donate" fetch="select" name="donate">
+            <column name="id_donate" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.User" fetch="select" name="user">
+            <column length="20" name="id_user" not-null="true"/>
+        </many-to-one>
+        <property name="accountName" type="string">
+            <column length="100" name="account_name" not-null="true"/>
+        </property>
+        <property name="amount" type="int">
+            <column name="amount" not-null="true"/>
+        </property>
+        <property name="dateDonate" type="date">
+            <column length="10" name="date_donate" not-null="true"/>
+        </property>
+        <property name="evidenceDonate" type="string">
+            <column length="100" name="evidence_donate" not-null="true"/>
+        </property>
+        <property name="statusAppove" type="string">
+            <column length="10" name="status_appove" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

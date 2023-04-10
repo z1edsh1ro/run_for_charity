@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.Appove" optimistic-lock="none" table="appove">
+        <id name="idAppoveAgency" type="java.lang.Integer">
+            <column name="id_appove_agency"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.Project" fetch="select" name="project">
+            <column name="id_project"/>
+        </many-to-one>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.Agency" fetch="select" name="agency">
+            <column name="id_agency"/>
+        </many-to-one>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.User" fetch="select" name="userByIdApprover">
+            <column length="20" name="`id_ approver`"/>
+        </many-to-one>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.User" fetch="select" name="userByIdUser">
+            <column length="20" name="id_user"/>
+        </many-to-one>
+        <property name="dateAppove" type="date">
+            <column length="10" name="date_appove" not-null="false"/>
+        </property>
+        <property name="description" type="string">
+            <column length="50" name="description" not-null="false"/>
+        </property>
+        <property name="type" type="string">
+            <column length="27" name="type" not-null="false"/>
+        </property>
+        <property name="evidence" type="string">
+            <column length="500" name="evidence" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.ManagerProject" optimistic-lock="none" table="manager_project">
+        <id name="idManagerProject" type="java.lang.Integer">
+            <column name="id_manager_project"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.Manager" fetch="select" name="manager">
+            <column name="id_manager" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.Project" fetch="select" name="project">
+            <column name="id_project" not-null="true"/>
+        </many-to-one>
+        <property name="status" type="string">
+            <column length="13" name="status" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

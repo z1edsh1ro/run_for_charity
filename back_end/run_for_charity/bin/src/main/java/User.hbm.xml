@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.User" optimistic-lock="none" table="user">
+        <id name="idUser" type="string">
+            <column length="20" name="id_user"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="fristName" type="string">
+            <column length="20" name="frist_name" not-null="true"/>
+        </property>
+        <property name="password" type="string">
+            <column length="15" name="password" not-null="true"/>
+        </property>
+        <property name="age" type="int">
+            <column name="age" not-null="true"/>
+        </property>
+        <property name="address" type="string">
+            <column length="500" name="address" not-null="true"/>
+        </property>
+        <property name="phone" type="string">
+            <column length="10" name="phone" not-null="true"/>
+        </property>
+        <property name="role" type="string">
+            <column length="19" name="role" not-null="true"/>
+        </property>
+        <property name="lastName" type="string">
+            <column length="20" name="last_name" not-null="true"/>
+        </property>
+        <property name="email" type="string">
+            <column length="100" name="email" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="appovesForIdApprover" table="appove">
+            <key>
+                <column length="20" name="`id_ approver`"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.Appove"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="registerProjects" table="register_project">
+            <key>
+                <column length="20" name="id_user" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.RegisterProject"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="appovesForIdUser" table="appove">
+            <key>
+                <column length="20" name="id_user"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.Appove"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="followProjects" table="follow_project">
+            <key>
+                <column length="20" name="id_user" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.FollowProject"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="donateDetails" table="donate_detail">
+            <key>
+                <column length="20" name="id_user" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.DonateDetail"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="managers" table="manager">
+            <key>
+                <column length="20" name="id_user" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.Manager"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.Agency" optimistic-lock="none" table="agency">
+        <id name="idAgency" type="java.lang.Integer">
+            <column name="id_agency"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nameAgency" type="string">
+            <column length="50" name="name_agency" not-null="true"/>
+        </property>
+        <property name="addressAgency" type="string">
+            <column length="100" name="address_agency" not-null="true"/>
+        </property>
+        <property name="status" type="string">
+            <column length="10" name="status" not-null="true"/>
+        </property>
+        <property name="phone" type="string">
+            <column length="10" name="phone" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="appoves" table="appove">
+            <key>
+                <column name="id_agency"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.Appove"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="projects" table="project">
+            <key>
+                <column name="id_agency" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.Project"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="managers" table="manager">
+            <key>
+                <column name="id_agency"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.Manager"/>
+        </set>
+    </class>
+</hibernate-mapping>

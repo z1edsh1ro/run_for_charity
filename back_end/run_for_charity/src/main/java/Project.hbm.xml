@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.Project" optimistic-lock="none" table="project">
+        <id name="idProject" type="java.lang.Integer">
+            <column name="id_project"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.Agency" fetch="select" name="agency">
+            <column name="id_agency" not-null="true"/>
+        </many-to-one>
+        <property name="nameProject" type="string">
+            <column length="50" name="name_project" not-null="true"/>
+        </property>
+        <property name="dateStart" type="date">
+            <column length="10" name="Date_start" not-null="true"/>
+        </property>
+        <property name="dateEnd" type="date">
+            <column length="10" name="Date_end" not-null="true"/>
+        </property>
+        <property name="phone" type="string">
+            <column length="10" name="phone" not-null="true"/>
+        </property>
+        <property name="addressProject" type="string">
+            <column length="50" name="address_project" not-null="true"/>
+        </property>
+        <property name="status" type="string">
+            <column length="10" name="status" not-null="true"/>
+        </property>
+        <property name="idProvince" type="int">
+            <column name="id_province" not-null="true"/>
+        </property>
+        <property name="dateRegisStart" type="date">
+            <column length="10" name="date_regis_start" not-null="true"/>
+        </property>
+        <property name="dateRegisEnd" type="date">
+            <column length="10" name="date_regis_end" not-null="true"/>
+        </property>
+        <property name="discription" type="string">
+            <column length="1000" name="Discription" not-null="true"/>
+        </property>
+        <property name="imagePofile" type="string">
+            <column length="500" name="image_pofile"/>
+        </property>
+        <property name="imagePoster" type="string">
+            <column length="500" name="image_poster"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="appoves" table="appove">
+            <key>
+                <column name="id_project"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.Appove"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="taskProjects" table="task_project">
+            <key>
+                <column name="id_project" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.TaskProject"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="managerProjects" table="manager_project">
+            <key>
+                <column name="id_project" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.ManagerProject"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="followProjects" table="follow_project">
+            <key>
+                <column name="id_project" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.FollowProject"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="donates" table="donate">
+            <key>
+                <column name="id_project" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.Donate"/>
+        </set>
+    </class>
+</hibernate-mapping>

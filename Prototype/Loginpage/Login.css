@@ -1,0 +1,72 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    background: #C5C5C5;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.main{
+    width: 350px;
+    text-align: center;
+    background-color: #fff;
+    margin: 200px auto;
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+ h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #07001f;
+}
+form input{
+    width: 90%;
+    border: 1px solid #fff;
+    padding: 12px 20px;
+    margin-bottom: 1.5rem;
+    border-radius: 20px;
+    background: #e4e4e4;
+    outline: none;
+}
+input:focus{
+    border: 1px solid #c0c0c0;
+}
+button{
+    font-size: 1rem;
+    /* margin-top: 1rem; */
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 90%;
+    color: #fff;
+    background-color: #3cb034;
+    cursor: pointer;
+}
+button:hover{
+    background: #5dbb63;
+}
+.member{
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    color: #636363;
+
+}
+.member a{
+ color:#116B8F
+} 
+.re-password{
+    text-align: right;
+    font-size: 0.8rem;
+    margin: 0.5rem 1.4rem 0px 0px;
+}
+.re-password a{
+     color:#116B8F
+}

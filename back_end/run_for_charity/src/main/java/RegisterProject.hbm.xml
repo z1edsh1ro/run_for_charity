@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.RegisterProject" optimistic-lock="none" table="register_project">
+        <id name="idRegister" type="java.lang.Integer">
+            <column name="id_register"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.TaskProject" fetch="select" name="taskProject">
+            <column name="id_task" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.User" fetch="select" name="user">
+            <column length="20" name="id_user" not-null="true"/>
+        </many-to-one>
+        <property name="dateRegister" type="date">
+            <column length="10" name="date_register" not-null="true"/>
+        </property>
+        <property name="evidenceRegister" type="string">
+            <column length="100" name="evidence_register" not-null="true"/>
+        </property>
+        <property name="numberRunner" type="int">
+            <column name="number_runner" not-null="true"/>
+        </property>
+        <property name="status" type="string">
+            <column length="10" name="status" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.AppoveProject" optimistic-lock="none" table="appove_project">
+        <composite-id class="th.ac.ku.kps.eng.cpe.se.model.AppoveProjectId" name="id">
+            <key-property name="dateAppove" type="date">
+                <column length="10" name="date_appove"/>
+            </key-property>
+            <key-property name="description" type="string">
+                <column length="50" name="description"/>
+            </key-property>
+            <key-property name="idAppoveProject" type="int">
+                <column name="id_appove_project"/>
+            </key-property>
+            <key-property name="idApprover" type="string">
+                <column length="20" name="`id_ approver`"/>
+            </key-property>
+            <key-property name="idProject" type="int">
+                <column name="id_project"/>
+            </key-property>
+            <key-property name="idUser" type="int">
+                <column name="id_user"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

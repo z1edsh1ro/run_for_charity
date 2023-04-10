@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 31, 2023, 10:36:08 PM by Hibernate Tools 6.1.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="run_for_charity_v4" name="th.ac.ku.kps.eng.cpe.se.model.Donate" optimistic-lock="none" table="donate">
+        <id name="idDonate" type="java.lang.Integer">
+            <column name="id_donate"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.se.model.Project" fetch="select" name="project">
+            <column name="id_project" not-null="true"/>
+        </many-to-one>
+        <property name="statusWithdraw" type="string">
+            <column length="10" name="`status_ withdraw`" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="donateDetails" table="donate_detail">
+            <key>
+                <column name="id_donate" not-null="true"/>
+            </key>
+            <one-to-many class="th.ac.ku.kps.eng.cpe.se.model.DonateDetail"/>
+        </set>
+    </class>
+</hibernate-mapping>
