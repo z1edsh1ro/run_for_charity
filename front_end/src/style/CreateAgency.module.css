@@ -1,0 +1,117 @@
+
+.mainCreateAgency{
+    width: 380px;
+    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
+    background-color: #fff;
+    margin: 100px auto;
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    box-shadow: -5px -1px 67px 5px rgba(0,0,0,0.48);
+-webkit-box-shadow: -5px -1px 67px 5px rgba(0,0,0,0.48);
+-moz-box-shadow: -5px -1px 67px 5px rgba(0,0,0,0.48);
+}
+
+.mainCreateAgency h1{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #07001f;
+}
+.mainCreateAgency label{
+    /* text-align: center; */
+    margin-left: 2rem;
+    margin-bottom: 0.25rem;
+    color: #636369;
+    font-size: 14px;
+}
+.form_control input{
+    /* border: 5px solid red; */
+    width: 90%;
+    border: 1px solid gray;
+    padding: 12px 20px;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    border-radius: 20px;
+    background: #e4e4e4;
+    outline: none;
+}
+.form_control input:focus{
+    border: 1px solid #3cb034;
+}
+.form_controlE input{
+    border: 1px solid red;
+    width: 90%;
+    padding: 12px 20px;
+    /* margin-bottom: 1rem; */
+    margin-left: 1rem;
+    border-radius: 20px;
+    background: #e4e4e4;
+    outline: none;
+}
+.form_controlE input:focus{
+    border: 1px solid red;
+}
+.form_controlS input{
+    border: 1px solid #3cb034;
+    width: 90%;
+    /* border: 1px solid #fff; */
+    padding: 12px 20px;
+    /* margin-bottom: 1rem; */
+    margin-left: 1rem;
+    border-radius: 20px;
+    background: #e4e4e4;
+    outline: none;
+}
+.form_controlS input:focus{
+    border: 1px solid #3cb034;
+}
+.form_controlE small{
+    color: red;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    font-size: 12px;
+    
+    
+}
+
+/* .age{
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.age input {
+    margin: 0  10px;
+    width: 5%;
+}
+.age label{
+    font-size:0.9rem;
+}
+textarea{
+    margin-top: 1rem;
+    width: 90%;
+} */
+button{
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 90%;
+    color: #fff;
+    background-color: #3cb034;
+    cursor: pointer;
+}
+button:hover{
+    background: #5dbb63;
+}
+.formMainCreateProject{
+    display: flex;
+}
+.inputfileAgency{
+    margin-left: 30px;
+}

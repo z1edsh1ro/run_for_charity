@@ -1,0 +1,4 @@
+.taskHeader{
+    display: flex;
+    justify-content: space-between;
+}
